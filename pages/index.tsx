@@ -9,7 +9,7 @@ export default function Home() {
         <title>Jessica's Portfolio</title>
       </Head>
       <Header />
-      <section id="hero" className="snap-center">
+      <section id="hero" className="snap-start">
         <Hero />
       </section>
     </div>
