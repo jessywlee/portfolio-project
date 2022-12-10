@@ -1,6 +1,7 @@
 import Head from 'next/head'
-import Image from 'next/image'
+import Header from '../components/Header'
 import styles from '../styles/Home.module.css'
+
 
 export default function Home() {
   return (
@@ -8,7 +9,7 @@ export default function Home() {
       <Head>
         <title>Jessica's Portfolio</title>
       </Head>
-			<h1 className="text-3xl font-bold underline"> Hello </h1>
+			<Header />
     </div>
   )
 }
