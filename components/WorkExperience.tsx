@@ -22,7 +22,10 @@ export default function WorkExprience({}: Props) {
       <h3 className="absolute uppercase top-24 tracking-[20px] text-gray-400 text-3xl md:text-4xl">
         Experience
       </h3>
-      <div className="mt-[150px] w-full flex overflow-x-scroll space-x-5 p-10 snap-x snap-mandatory">
+      <div
+        className="mt-[120px] w-full flex overflow-x-scroll 
+			space-x-5 p-10 snap-x snap-mandatory scrollbar-thin
+			scrollbar-track-gray-400/20 scrollbar-thumb-[#e05abd]/40">
         <ExperienceCard />
         <ExperienceCard />
         <ExperienceCard />

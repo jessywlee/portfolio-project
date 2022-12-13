@@ -15,7 +15,8 @@ export default function Projects({}: Props) {
       </h3>
       <div
         className="relative w-full flex overflow-x-scroll overflow-y-hidden 
-			snap-x snap-mandatory z-20">
+			snap-x snap-mandatory z-20 scrollbar-thin
+			scrollbar-track-gray-400/20 scrollbar-thumb-[#e05abd]/40">
         {projects.map((project) => (
           <motion.div
             initial={{ opacity: 0 }}
