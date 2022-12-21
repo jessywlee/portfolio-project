@@ -16,7 +16,7 @@ export default function Projects({}: Props) {
         Projects / Studies
       </h3>
       <motion.div
-        className="absolute top-[200px] w-screen 
+        className="absolute top-[200px] w-5/6
         grid xs:grid-cols-1 sm:grid-cols-2 lg:grid-cols-3
         px-4 gap-5 snap-center"
         initial={{ y: -100 }}
