@@ -26,7 +26,7 @@ export default defineType({
     defineField({
       name: 'backgroundInformation',
       title: 'BackgroundInformation',
-      type: 'string',
+      type: 'text',
     }),
     defineField({
       name: 'profilePic',
