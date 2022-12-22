@@ -24,6 +24,11 @@ export interface Skill extends SanityBody {
   skillImage: Image;
 }
 
+export interface Skills extends SanityBody {
+  _type: "skills";
+  name: string;
+  skills: Skill[];
+}
 export interface Project extends SanityBody {
   _type: "project";
   title: string;
