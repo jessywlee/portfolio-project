@@ -16,22 +16,19 @@ export default defineType({
       type: 'string',
     }),
     defineField({
-      name: 'companyImage',
-      title: 'CompanyImage',
-      type: 'image',
-      options: {
-        hotspot: true,
-      },
+      name: 'companyUrl',
+      title: 'CompanyUrl',
+      type: 'url',
     }),
     defineField({
       name: 'dateStarted',
       title: 'DateStarted',
-      type: 'date',
+      type: 'string',
     }),
     defineField({
       name: 'dateEnded',
       title: 'dateEnded',
-      type: 'date',
+      type: 'string',
     }),
     defineField({
       name: 'isCurrentlyWorkingHere',

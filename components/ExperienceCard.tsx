@@ -1,68 +1,55 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
-import experience from "../public/experience.png";
+// import experience from "../public/experience.png";
+import { Experience } from "../typings";
+import { urlFor } from "../sanity";
 
-type Props = {};
+type Props = {
+  experience: Experience;
+};
 
-export default function ExperienceCard({}: Props) {
+export default function ExperienceCard({ experience }: Props) {
+  useEffect(() => {
+    console.log(experience);
+  }, []);
   return (
     <article
       className="flex flex-col rounded-lg items-center 
 			space-y-7 flex-shrink-0 w-[500px] h-[600px] snap-center
-			bg-[#292929] p-5 hover:opacity-100 opacity-60 cursor-pointer 
-			transition-opacity duration-200 overflow-scroll"
+			bg-[#2d2c2c] p-10 overflow-scroll"
     >
-      <motion.div
-        initial={{
-          y: -100,
-          opacity: 0,
-        }}
-        transition={{ duration: 1.2 }}
-        whileInView={{ y: 0, opacity: 1 }}
-        viewport={{ once: true }}
-      >
-        <Image
-          className="w-32 h-32 rounded-full object-cover object-center"
-          src={experience}
-          alt="company logo"
-        />
-      </motion.div>
-
       <div className="px-0 md:px-10 text-left">
-        <h4 className="text-4xl font-light">Frontend Engineer</h4>
-        <p className="font-bold text-2xl mt-1">SeaVantage</p>
+        <h4 className="text-xl mt-1">
+          {experience.jobTitle} @{" "}
+          <a
+            href={experience.companyUrl}
+            target="_blank"
+            className="font-light underline"
+          >
+            {experience.company}
+          </a>
+        </h4>
         <div className="flex space-x-2 my-2">
           {/* tech used */}
-          <Image
-            src="https://img.icons8.com/color/512/javascript.png"
-            width="30"
-            height="30"
-            alt="javascript"
-            className="rounded-full"
-          />
-          <Image
-            src="https://img.icons8.com/color/512/javascript.png"
-            width="30"
-            height="30"
-            alt="javascript"
-            className="rounded-full"
-          />
-          <Image
-            src="https://img.icons8.com/color/512/javascript.png"
-            width="30"
-            height="30"
-            alt="javascript"
-            className="rounded-full"
-          />
+          {experience.technologies.map((tech) => (
+            <Image
+              src={urlFor(tech.skillImage).url()}
+              width="30"
+              height="30"
+              alt={tech.title}
+              key={tech._id}
+            />
+          ))}
         </div>
-        <p className="uppercase py-5 text-gray-300">work start ... end</p>
-        <ul className="list-disc space-y-4 ml-5 text-lg">
-          <li>summary pointssummary points</li>
-          <li>summary pointssummary points</li>
-          <li>summary pointssummary points</li>
-          <li>summary pointssummary points</li>
-          <li>summary pointssummary points</li>
+        <p className="uppercase py-3 text-gray-300">
+          {experience.dateStarted} -{" "}
+          {experience.isCurrentlyWorkingHere ? "Present" : experience.dateEnded}
+        </p>
+        <ul className="list-disc space-y-2 ml-5 text-sm">
+          {experience.points.map((point, i) => (
+            <li key={i}>{point}</li>
+          ))}
         </ul>
       </div>
     </article>

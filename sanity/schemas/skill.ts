@@ -12,9 +12,12 @@ export default defineType({
       type: 'string',
     }),
     defineField({
-      name: 'skillImageUrl',
-      title: 'SkillImageUrl',
-      type: 'url',
+      name: 'skillImage',
+      title: 'SkillImage',
+      type: 'image',
+      options: {
+        hotspot: true,
+      },
     }),
   ],
 })
