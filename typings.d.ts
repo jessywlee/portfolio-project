@@ -18,13 +18,6 @@ export interface Social extends SanityBody {
   title: string;
   socialUrl: string;
 }
-
-// export interface Technology extends SanityBody {
-//   _type: "skill";
-//   title: string;
-//   skillImageUrl: string;
-// }
-
 export interface Skill extends SanityBody {
   _type: "skill";
   title: string;

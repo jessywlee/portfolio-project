@@ -1,10 +1,17 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { SocialIcon } from "react-social-icons";
 import { motion } from "framer-motion";
+import { Social } from "../typings";
 
-type Props = {};
+type Props = {
+  socials: Social[];
+};
 
-export default function Header({}: Props) {
+export default function Header({ socials }: Props) {
+  useEffect(() => {
+    const email = document.querySelector(".email-icon") as HTMLAnchorElement;
+    email.href = "mailto:to.jessywlee.gmail.com";
+  }, []);
   return (
     <header className="sticky top-0 py-2 px-3 flex items-center justify-between max-w-7xl mx-auto">
       <motion.div
@@ -18,25 +25,17 @@ export default function Header({}: Props) {
         }}
         transition={{
           duration: 1.2,
-        }}>
-        <SocialIcon
-          url="https://linkedin.com/in/jessywlee"
-          target="_blank"
-          fgColor="gray"
-          bgColor="transparent"
-        />
-        <SocialIcon
-          url="https://jessywlee.medium.com/"
-          target="_blank"
-          fgColor="gray"
-          bgColor="transparent"
-        />
-        <SocialIcon
-          url="https://github.com/jessywlee"
-          target="_blank"
-          fgColor="gray"
-          bgColor="transparent"
-        />
+        }}
+      >
+        {socials.map((social) => (
+          <SocialIcon
+            key={social._id}
+            url={social.socialUrl}
+            target="_blank"
+            fgColor="gray"
+            bgColor="transparent"
+          />
+        ))}
       </motion.div>
       <motion.div
         initial={{
@@ -49,8 +48,17 @@ export default function Header({}: Props) {
         }}
         transition={{
           duration: 1.2,
-        }}>
-        <SocialIcon network="email" fgColor="gray" bgColor="transparent" />
+        }}
+      >
+        <SocialIcon
+          target="_blank"
+          rel="noreferrer"
+          network="email"
+          fgColor="gray"
+          bgColor="transparent"
+          className="cursor-pointer email-icon"
+        />
+        {/* </a> */}
       </motion.div>
     </header>
   );
