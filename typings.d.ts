@@ -46,7 +46,7 @@ export interface Experience extends SanityBody {
 
 export interface PageInfo extends SanityBody {
   _type: "pageInfo";
-  name: string;
+  name: string[];
   backgroundInformation: string;
   heroImage: Image;
   profilePic: Image;

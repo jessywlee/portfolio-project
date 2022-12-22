@@ -8,7 +8,8 @@ export default defineType({
     defineField({
       name: 'name',
       title: 'Name',
-      type: 'string',
+      type: 'array',
+      of: [{type: 'string'}],
     }),
     defineField({
       name: 'role',
