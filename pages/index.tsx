@@ -43,7 +43,7 @@ export default function Home({
 		snap-y snap-mandatory z-0 scrollbar overflow-x-hidden
 		scrollbar-track-gray-400/20 scrollbar-thumb-[#e05abd]/40">
       <Head>
-        <title>Jessica's Portfolio</title>
+        <title>Jessica Lee</title>
         <link
           rel="icon"
           type="image/png"
