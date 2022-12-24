@@ -41,10 +41,15 @@ export default function Home({
     <div
       className="bg-[rgb(36,36,36)] text-white h-screen 
 		snap-y snap-mandatory z-0 scrollbar overflow-x-hidden
-		scrollbar-track-gray-400/20 scrollbar-thumb-[#e05abd]/40"
-    >
+		scrollbar-track-gray-400/20 scrollbar-thumb-[#e05abd]/40">
       <Head>
         <title>Jessica's Portfolio</title>
+        <link
+          rel="icon"
+          type="image/png"
+          sizes="96x96"
+          href="/favicon-96x96.png"
+        />
       </Head>
       <Header socials={socials} />
       <section id="hero" className="snap-start">
@@ -56,11 +61,11 @@ export default function Home({
       <section id="experience" className="snap-center">
         <WorkExperience experiences={experiences} />
       </section>
-      <section id="skills" className="snap-start">
+      {/* <section id="skills" className="snap-start">
         <Skills skillsSet={skills} />
-      </section>
+      </section> */}
       <section id="projects" className="snap-start">
-        <Projects />
+        <Projects projects={projects} />
       </section>
       <section id="contact" className="snap-start">
         <ContactMe />

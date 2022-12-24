@@ -30,22 +30,22 @@ export default function Hero({ pageInfo }: Props) {
         <h2 className="text-sm uppercase text-gray-400 tracking-[15px] py-2">
           {pageInfo.role}
         </h2>
-        <h1 className="text-4xl lg:text-5xl font-semibold px-10">
+        <h1 className="text-2xl sm:text-4xl lg:text-5xl font-semibold px-10">
           <span>{introText}</span>
           <Cursor cursorColor="#e05abd" />
         </h1>
-        <div className="pt-5">
+        <div className="sm:pt-5 pt-10">
           <Link href="#about">
             <button className="heroButton">About</button>
           </Link>
           <Link href="#experience">
             <button className="heroButton">Experience</button>
           </Link>
-          <Link href="#skills">
-            <button className="heroButton">Skills</button>
-          </Link>
           <Link href="#projects">
             <button className="heroButton">Projects</button>
+          </Link>
+          <Link href="#contact">
+            <button className="heroButton">Contact</button>
           </Link>
         </div>
       </div>

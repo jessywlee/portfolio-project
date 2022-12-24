@@ -32,6 +32,7 @@ export interface Skills extends SanityBody {
 export interface Project extends SanityBody {
   _type: "project";
   title: string;
+	id: number;
   image: Image;
   linkToBuild1: string;
   linkToBuild2: string;

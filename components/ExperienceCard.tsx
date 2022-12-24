@@ -16,9 +16,9 @@ export default function ExperienceCard({ experience }: Props) {
   return (
     <article
       className="flex flex-col rounded-lg items-center 
-			space-y-7 flex-shrink-0 w-[500px] h-[600px] snap-center
-			bg-[#2d2c2c] p-10 overflow-scroll"
-    >
+			space-y-7 flex-shrink-0 w-[420px] h-[600px] snap-center
+			bg-[#2d2c2c] p-6 pt-10 scrollbar-thin overflow-x-hidden
+			scrollbar-track-gray-400/20 scrollbar-thumb-[#e05abd]/40">
       <div className="px-0 md:px-10 text-left">
         <h4 className="text-xl mt-1">
           {experience.jobTitle} @{" "}
@@ -26,7 +26,7 @@ export default function ExperienceCard({ experience }: Props) {
             href={experience.companyUrl}
             target="_blank"
             className="font-light underline"
-          >
+            rel="noreferrer">
             {experience.company}
           </a>
         </h4>
@@ -46,7 +46,7 @@ export default function ExperienceCard({ experience }: Props) {
           {experience.dateStarted} -{" "}
           {experience.isCurrentlyWorkingHere ? "Present" : experience.dateEnded}
         </p>
-        <ul className="list-disc space-y-2 ml-5 text-sm">
+        <ul className="list-disc space-y-2 ml-5 text-md">
           {experience.points.map((point, i) => (
             <li key={i}>{point}</li>
           ))}

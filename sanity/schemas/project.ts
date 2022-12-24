@@ -11,6 +11,11 @@ export default defineType({
       description: 'Title of the project',
       type: 'string',
     }),
+		defineField({
+      name: 'id',
+      title: 'Id',
+      type: 'number',
+    }),
     defineField({
       name: 'image',
       title: 'Image',
