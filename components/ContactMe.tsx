@@ -12,7 +12,7 @@ export default function ContactMe({}: Props) {
       </h3>
 
       <div className="flex flex-col justify-center items-center space-y-10">
-        <p className="w-full p-2 text-xl md:text-2xl text-semibold text-center max-w-[550px]">
+        <p className="w-full p-4 sm:p-2 text-xl md:text-2xl text-semibold text-center max-w-[550px]">
           Whether you have a question or just want to chat, my inbox is always
           open. 💌 Let's keep in touch! 🤓
         </p>

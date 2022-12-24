@@ -6,8 +6,7 @@ import { Experience } from "../../typings";
 const query = groq`
   *[_type=="experience"]{
     ...,
-    technologies[]->,
-    dateEnded->
+    technologies[]->
   }
 `;
 

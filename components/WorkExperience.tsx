@@ -35,15 +35,14 @@ export default function WorkExprience({ experiences }: Props) {
         transition={{
           duration: 1.5,
         }}
-        className="mt-[140px] w-full flex overflow-x-scroll 
+        className="mt-[140px] max-w-[420px] flex overflow-x-scroll 
         space-x-5 p-10 snap-x snap-mandatory scrollbar-thin
         scrollbar-track-gray-400/20 scrollbar-thumb-[#e05abd]/40">
-        {experiences.map((experience) => (
-          <ExperienceCard key={experience._id} experience={experience} />
-        ))}
-        {/* <ExperienceCard />
-        <ExperienceCard />
-        <ExperienceCard /> */}
+        {experiences
+          .sort((a, b) => a.order - b.order)
+          .map((experience) => (
+            <ExperienceCard key={experience._id} experience={experience} />
+          ))}
       </motion.div>
     </motion.div>
   );

@@ -18,7 +18,7 @@ export default function Projects({ projects }: Props) {
         Projects / Studies
       </h3>
       <motion.div
-        className="absolute top-[180px] w-5/6
+        className="absolute top-[200px] sm:top-[180px] w-5/6
         grid xs:grid-cols-1 sm:grid-cols-2 lg:grid-cols-3
         px-4 gap-5 snap-center"
         initial={{ y: -100 }}
@@ -32,8 +32,9 @@ export default function Projects({ projects }: Props) {
               whileHover={{ opacity: 1, transition: { duration: 0.2 } }}
               key={project.id}
               className="p-4 first-letter:relative group
-							flex flex-col overflow-y-scroll bg-[#292929]/40 
-							rounded-lg z-20 hover:opacity-100 cursor-pointer">
+							flex flex-col bg-[#292929]/40 
+							rounded-lg z-20 hover:opacity-100 cursor-pointer
+							border border-[#e05abd]/20 ">
               <div className="flex justify-end w-full">
                 <SocialIcon
                   url={
@@ -48,18 +49,16 @@ export default function Projects({ projects }: Props) {
               </div>
 
               <div>
-                <h4 className="text-center text-2xl font-semibold">
+                <h4 className="text-center text-2xl font-semibold max-h-[280px] max-w-[360px] overflow-hidden overflow-ellipsis">
                   {project.title}
                 </h4>
-                <p className="text-center md:text-left mt-3 text-ellipsis">
+                <p className="text-center md:text-left mt-3">
                   {project.summary}
                 </p>
               </div>
             </motion.div>
           ))}
       </motion.div>
-
-      <div className="absolute w-full top-[30%] bg-[#e05abd]/10 h-[400px] -skew-y-12"></div>
     </div>
   );
 }

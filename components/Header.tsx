@@ -13,7 +13,7 @@ export default function Header({ socials }: Props) {
     email.href = "mailto:to.jessywlee.gmail.com";
   }, []);
   return (
-    <header className="sticky top-0 py-2 px-3 flex items-center justify-between max-w-7xl mx-auto">
+    <header className="sticky top-0 py-2 px-3 flex items-center justify-between max-w-7xl mx-auto z-30">
       <motion.div
         initial={{
           x: -500,
@@ -25,8 +25,7 @@ export default function Header({ socials }: Props) {
         }}
         transition={{
           duration: 1.2,
-        }}
-      >
+        }}>
         {socials.map((social) => (
           <SocialIcon
             key={social._id}
@@ -48,8 +47,7 @@ export default function Header({ socials }: Props) {
         }}
         transition={{
           duration: 1.2,
-        }}
-      >
+        }}>
         <SocialIcon
           target="_blank"
           rel="noreferrer"
