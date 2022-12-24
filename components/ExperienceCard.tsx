@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
 // import experience from "../public/experience.png";
@@ -10,9 +10,6 @@ type Props = {
 };
 
 export default function ExperienceCard({ experience }: Props) {
-  useEffect(() => {
-    console.log(experience);
-  }, []);
   return (
     <article
       className="flex flex-col rounded-lg items-center 

@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { SocialIcon } from "react-social-icons";
 import { motion } from "framer-motion";
 import { Social } from "../typings";
@@ -8,10 +8,6 @@ type Props = {
 };
 
 export default function Header({ socials }: Props) {
-  useEffect(() => {
-    const email = document.querySelector(".email-icon") as HTMLAnchorElement;
-    email.href = "mailto:to.jessywlee.gmail.com";
-  }, []);
   return (
     <header className="sticky top-0 py-2 px-3 flex items-center justify-between max-w-7xl mx-auto z-30">
       <motion.div

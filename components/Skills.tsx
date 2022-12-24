@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { motion } from "framer-motion";
 import Skill from "./Skill";
 import { Skills as SkillsType } from "../typings";
@@ -8,15 +8,11 @@ type Props = {
 };
 
 export default function Skills({ skillsSet }: Props) {
-  useEffect(() => {
-    console.log(skillsSet);
-  }, []);
   return (
     <motion.div
       className="flex flex-col justify-center items-center 
       relative text-center md:text-left xl:flex-row 
-      max-w-[2000px] xl:px-10 min-h-screen xl:space-y-0 mx-auto "
-    >
+      max-w-[2000px] xl:px-10 min-h-screen xl:space-y-0 mx-auto ">
       <h3 className="absolute top-24 uppercase tracking-[20px] text-gray-400 text-4xl">
         Skills
       </h3>
