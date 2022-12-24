@@ -6,7 +6,7 @@ import WorkExperience from "../components/WorkExperience";
 import Projects from "../components/Projects";
 import ContactMe from "../components/ContactMe";
 import { PageInfo, Experience, Social, Project } from "../typings";
-import { GetServerSideProps } from "next";
+import { GetStaticProps } from "next";
 import {
   fetchPageInfo,
   fetchExperiences,
@@ -61,7 +61,7 @@ export default function Home({
   );
 }
 
-export const getServerSideProps: GetServerSideProps<Props> = async () => {
+export const getStaticProps: GetStaticProps<Props> = async () => {
   const pageInfo: PageInfo = await fetchPageInfo();
   const experiences: Experience[] = await fetchExperiences();
   const projects: Project[] = await fetchProjects();
