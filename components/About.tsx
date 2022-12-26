@@ -62,7 +62,11 @@ export default function About({ pageInfo }: Props) {
           </p>
         </div>
       </motion.div>
-      <div className="absolute p-0 w-full top-[30%] bg-[#e05abd]/10 h-[400px] -skew-y-12"></div>
+      <motion.div
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ duration: 1.2 }}
+        className="absolute p-0 w-full top-[30%] bg-[#e05abd]/10 h-[400px] -skew-y-12"></motion.div>
     </div>
   );
 }
