@@ -6,10 +6,14 @@ Deployed on Vercel: (https://jessica-portfolio-jessywlee.vercel.app/)
 
 ## Getting Started
 
+First, run the development server:
+
 ```bash
 npm run dev
 # or
 yarn dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+This project is connected to Sanity.io studio which means you will need to provide its projectId in .env.local file. Refer to .env.example for full requirements. In the development environment, the BASE_URL will be your localhost url.
+
+
