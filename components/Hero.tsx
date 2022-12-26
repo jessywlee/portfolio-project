@@ -17,7 +17,7 @@ export default function Hero({ pageInfo }: Props) {
     delaySpeed: 2000,
   });
   return (
-    <div className="h-screen flex flex-col justify-center items-center space-y-8 text-center overflow-hidden pt-[150px]">
+    <div className="h-screen flex flex-col justify-center items-center space-y-8 text-center overflow-hidden pt-[20px] sm:pt-[150px]">
       <BackgroundCircles />
       <Image
         src={urlFor(pageInfo?.heroImage).url()}

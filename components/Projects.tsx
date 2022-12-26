@@ -20,8 +20,8 @@ export default function Projects({ projects }: Props) {
       <motion.div
         className="absolute top-[200px] sm:top-[180px] w-5/6
         grid xs:grid-cols-1 sm:grid-cols-2 lg:grid-cols-3
-        px-4 gap-5 snap-center"
-        initial={{ y: -100 }}
+        px-4 gap-5 snap-center pb-[100px] sm:pb-3"
+        initial={{ y: 200 }}
         whileInView={{ y: 0 }}
         transition={{ duration: 1.2 }}>
         {projects

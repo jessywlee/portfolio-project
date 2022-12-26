@@ -7,7 +7,7 @@ export default function ContactMe({}: Props) {
     <div
       className="h-screen flex flex-col relative overflow-hidden text-left md:flex-row max-w-full
 		justify-evenly mx-auto items-center z-0">
-      <h3 className="absolute top-24 uppercase tracking-[20px] text-gray-400 text-4xl">
+      <h3 className="absolute top-24 uppercase tracking-[20px] -mr-[20px] text-gray-400 text-4xl">
         Let&apos;s Talk
       </h3>
 

@@ -42,7 +42,7 @@ export default function About({ pageInfo }: Props) {
           viewport={{
             once: true,
           }}
-          className="mt-[120px] md:mt-0 -mb-10 md:mb-0 flex-shrink-0  
+          className="mt-[60px] sm:mt-[120px] md:mt-0 -mb-10 md:mb-0 flex-shrink-0  
 					">
           <Image
             className="w-56 h-56 grayscale rounded-full 
@@ -55,9 +55,11 @@ export default function About({ pageInfo }: Props) {
           />
         </motion.div>
 
-        <div className="space-y-10 px-0 md:px-10">
+        <div className="space-y-2 sm:space-y-5 px-0 md:px-10 -mt-10 sm:-mt-0">
           <h4 className="text-4xl font-semibold">Hello there!</h4>
-          <p className="leading-6">{pageInfo.backgroundInformation}</p>
+          <p className=" sm:leading-6 text-sm sm:text-md">
+            {pageInfo.backgroundInformation}
+          </p>
         </div>
       </motion.div>
       <div className="absolute p-0 w-full top-[30%] bg-[#e05abd]/10 h-[400px] -skew-y-12"></div>
