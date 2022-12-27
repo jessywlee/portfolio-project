@@ -20,11 +20,16 @@ export default function WorkExprience({ experiences }: Props) {
         duration: 1.5,
       }}
       className="h-screen flex flex-col relative 
-			text-center md:text-left md:flex-row max-w-7xl 
-			px-10 justify-evenly mx-auto items-center">
-      <h3 className="absolute uppercase z-30 top-24 tracking-[20px] -mr-[20px] text-gray-400 text-3xl md:text-4xl bg-[rgb(36,36,36)]">
+			text-center md:text-left md:flex-row max-w-7xl overflow-y-scroll
+			px-10 justify-evenly mx-auto items-center"
+    >
+      <h3
+        className="absolute top-24 text-center z-30 uppercase tracking-[20px] 
+      -mr-[20px] text-gray-400 text-3xl md:text-4xl"
+      >
         Experience
       </h3>
+
       <motion.div
         initial={{
           x: -100,
@@ -35,9 +40,10 @@ export default function WorkExprience({ experiences }: Props) {
         transition={{
           duration: 1.5,
         }}
-        className="mt-[100px] sm:mt-[140px] max-w-[420px] flex flex-col sm:flex-row sm:overflow-x-scroll 
+        className="absolute top-[15%] sm:top-[20%] desktop:top-[30%] max-w-[420px] flex flex-col sm:flex-row sm:overflow-x-scroll 
         sm:space-x-5 p-10 pb-[100px] sm:pb-0 sm:snap-x snap-mandatory scrollbar-thin
-        scrollbar-track-gray-400/20 scrollbar-thumb-[#e05abd]/40">
+        scrollbar-track-gray-400/20 scrollbar-thumb-[#e05abd]/40 z-0"
+      >
         {experiences
           .sort((a, b) => a.order - b.order)
           .map((experience) => (

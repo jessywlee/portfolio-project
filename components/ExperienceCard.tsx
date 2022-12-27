@@ -18,9 +18,10 @@ export default function ExperienceCard({ experience }: Props) {
       whileInView={{ opacity: 1 }}
       transition={{ duration: 1.2 }}
       className="flex flex-col rounded-lg items-center 
-			space-y-7 flex-shrink-0 w-[350px] h-[500px] sm:w-[420px] sm:h-[600px] snap-center
+			space-y-7 flex-shrink-0 w-[340px] h-[500px] sm:w-[420px] sm:h-[620px] desktop:w-[480px] desktop:h-[640px] snap-center
 			bg-[#2d2c2c] p-6 pt-10 scrollbar-thin overflow-x-hidden
-			scrollbar-track-gray-400/20 scrollbar-thumb-[#e05abd]/40 mt-7 sm:mt-0">
+			scrollbar-track-gray-400/20 scrollbar-thumb-[#e05abd]/40 mt-7 sm:mt-0"
+    >
       <div className="px-0 md:px-10 text-left">
         <h4 className="text-xl mt-1">
           {experience.jobTitle} @{" "}
@@ -28,7 +29,8 @@ export default function ExperienceCard({ experience }: Props) {
             href={experience.companyUrl}
             target="_blank"
             className="font-light underline"
-            rel="noreferrer">
+            rel="noreferrer"
+          >
             {experience.company}
           </a>
         </h4>
@@ -48,7 +50,7 @@ export default function ExperienceCard({ experience }: Props) {
           {experience.dateStarted} -{" "}
           {experience.isCurrentlyWorkingHere ? "Present" : experience.dateEnded}
         </p>
-        <ul className="list-disc space-y-2 ml-5 text-sm sm:text-md">
+        <ul className="list-disc space-y-2 ml-5 text-sm sm:text-base">
           {experience.points.map((point, i) => (
             <li key={i}>{point}</li>
           ))}

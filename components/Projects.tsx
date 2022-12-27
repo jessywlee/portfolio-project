@@ -13,17 +13,19 @@ export default function Projects({ projects }: Props) {
   return (
     <div
       className="h-screen flex flex-col relative overflow-y-scroll text-left md:flex-row max-w-full
-			justify-evenly mx-auto items-center z-0">
-      <h3 className="absolute top-24 uppercase tracking-[20px] text-gray-400 text-4xl text-center">
+			justify-evenly mx-auto items-center z-0"
+    >
+      <h3 className="absolute top-24 uppercase tracking-[20px] text-gray-400 text-2xl sm:text-4xl text-center">
         Projects / Studies
       </h3>
       <motion.div
-        className="absolute top-[200px] sm:top-[180px] w-5/6
+        className="absolute top-[25%] sm:top-[20%] max-w-7xl
         grid xs:grid-cols-1 sm:grid-cols-2 lg:grid-cols-3
         px-4 gap-5 snap-center pb-[100px] sm:pb-3"
         initial={{ y: 200 }}
         whileInView={{ y: 0 }}
-        transition={{ duration: 1.2 }}>
+        transition={{ duration: 1.2 }}
+      >
         {projects
           .sort((a, b) => a.id - b.id)
           .map((project) => (
@@ -34,7 +36,8 @@ export default function Projects({ projects }: Props) {
               className="p-4 first-letter:relative group
 							flex flex-col bg-[#292929]/40 
 							rounded-lg z-20 hover:opacity-100 cursor-pointer
-							border border-[#e05abd]/20 ">
+							border border-[#e05abd]/20 "
+            >
               <div className="flex justify-end w-full">
                 <SocialIcon
                   url={
