@@ -1,7 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
-// import experience from "../public/experience.png";
 import { Experience } from "../typings";
 import { urlFor } from "../sanity";
 
@@ -39,8 +38,8 @@ export default function ExperienceCard({ experience }: Props) {
           {experience.technologies.map((tech) => (
             <Image
               src={urlFor(tech.skillImage).url()}
-              width="30"
-              height="30"
+              width={30}
+              height={30}
               alt={tech.title}
               key={tech._id}
             />

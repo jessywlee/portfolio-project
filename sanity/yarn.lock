@@ -5429,7 +5429,7 @@ sanity-diff-patch@^1.0.9:
   dependencies:
     diff-match-patch "^1.0.5"
 
-sanity@^3.0.0:
+sanity@^3.1.2:
   version "3.1.2"
   resolved "https://registry.yarnpkg.com/sanity/-/sanity-3.1.2.tgz#a14c9b1e5c673df35e1957ad89ab486ba964b9f2"
   integrity sha512-knh6n9nWSVzwueR+mMP/eRmObBw/BU132Nm6t0Ea/78vKun7RH4SvOCxMDbNhoWRCnzFw3IrZ7RaDDzTS2qruw==
