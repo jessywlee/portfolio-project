@@ -40,7 +40,7 @@ export default function WorkExprience({ experiences }: Props) {
         transition={{
           duration: 1.5,
         }}
-        className="absolute top-[15%] sm:top-[20%] desktop:top-[30%] max-w-[420px] flex flex-col sm:flex-row sm:overflow-x-scroll 
+        className="absolute top-[15%] sm:top-[20%] desktop:top-[25%] max-w-[420px] flex flex-col sm:flex-row sm:overflow-x-scroll 
         sm:space-x-5 p-10 pb-[100px] sm:pb-0 sm:snap-x snap-mandatory scrollbar-thin
         scrollbar-track-gray-400/20 scrollbar-thumb-[#e05abd]/40 z-0"
       >
