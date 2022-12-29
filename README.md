@@ -2,8 +2,6 @@
 
 This fully responsive website is developed with Next.js, TailwindCSS, Framer Motion, Sanity.io.
 
-Deployed on Vercel: (https://jessica-portfolio-jessywlee.vercel.app/)
-
 ## Getting Started
 
 First, run the development server:
