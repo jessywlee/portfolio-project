@@ -4,6 +4,7 @@ import Hero from "../components/Hero";
 import About from "../components/About";
 import WorkExperience from "../components/WorkExperience";
 import Projects from "../components/Projects";
+import Contributions from "../components/Contributions";
 import ContactMe from "../components/ContactMe";
 import { PageInfo, Experience, Social, Project } from "../typings";
 import { GetStaticProps } from "next";
@@ -54,6 +55,9 @@ export default function Home({
       </section>
       <section id="projects" className="snap-start">
         <Projects projects={projects} />
+      </section>
+      <section id="contributions" className="snap-start">
+        <Contributions />
       </section>
       <section id="contact" className="snap-start">
         <ContactMe />
