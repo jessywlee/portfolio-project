@@ -71,7 +71,6 @@ export const getStaticProps: GetStaticProps<Props> = async () => {
   const experiences: Experience[] = await fetchExperiences();
   const projects: Project[] = await fetchProjects();
   const socials: Social[] = await fetchSocials();
-
   return {
     props: {
       pageInfo,

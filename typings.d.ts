@@ -32,7 +32,7 @@ export interface Skills extends SanityBody {
 export interface Project extends SanityBody {
   _type: "project";
   title: string;
-	id: number;
+  id: number;
   image: Image;
   linkToBuild1: string;
   linkToBuild2: string;
@@ -42,7 +42,7 @@ export interface Project extends SanityBody {
 export interface Experience extends SanityBody {
   _type: "experience";
   company: string;
-	order: number;
+  order: number;
   companyUrl: string;
   dateStarted: string;
   dateEnded: string;

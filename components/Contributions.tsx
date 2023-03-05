@@ -1,10 +1,36 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import Contribution from "./Contribution";
+import { fetchGitlab } from "../utils/Util";
+import _ from "lodash";
 
 export default function Contributions() {
-  const oneYear = Array.from(Array(365).keys());
-
+  const today = new Date();
+  const oneYear = 60 * 60 * 24 * 1000 * 365;
+  const fromDate = new Date(new Date().getTime() - oneYear);
+  const [events, setEvents] = useState<Events[]>();
+  let dates = [];
+  type Event = {
+    [key: string]: number;
+  };
+  while (fromDate < today) {
+    fromDate.setDate(fromDate.getDate() + 1);
+    dates.push(new Date(fromDate).toISOString());
+  }
+  useEffect(() => {
+    async function getEvents() {
+      const res = await fetchGitlab();
+      const groupByDates = [
+        _.groupBy(res, (res) => res.created_at.split("T")[0]),
+      ];
+      let result: Event = {};
+      for (const [key, value] of Object.entries(groupByDates[0])) {
+        result[key] = value.length;
+      }
+      console.log(result);
+    }
+    getEvents();
+  }, []);
   return (
     <div
       className="h-screen flex flex-col relative overflow-y-scroll text-left md:flex-row max-w-full
@@ -20,7 +46,7 @@ export default function Contributions() {
         whileInView={{ y: 0 }}
         transition={{ duration: 1.2 }}
       >
-        {oneYear.map((day) => (
+        {dates.map((day) => (
           <Contribution key={day} />
         ))}
       </motion.div>
