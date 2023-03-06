@@ -1,4 +1,16 @@
 import { Experience, Social, PageInfo, Project, Skills } from "../typings";
+import { getGithubContributions } from "github-contributions-counter";
+
+export const fetchGithub = async () => {
+  const res = await getGithubContributions({
+    username: process.env.NEXT_PUBLIC_GITHUB_USER_ID!,
+    token: process.env.NEXT_PUBLIC_GITHUB_TOKEN!, // secret
+  });
+  const contributionsList =
+    res.data.data.user.contributionsCollection.contributionCalendar.weeks;
+
+  return contributionsList;
+};
 
 export const fetchGitlab = async () => {
   const oneYear = 60 * 60 * 24 * 1000 * 365;

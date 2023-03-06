@@ -1,14 +1,15 @@
 import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import Contribution from "./Contribution";
-import { fetchGitlab } from "../utils/Util";
+import { fetchGitlab, fetchGithub } from "../utils/Util";
 import _ from "lodash";
+import { getGithubContributions } from "github-contributions-counter";
 
 export default function Contributions() {
   const today = new Date();
   const oneYear = 60 * 60 * 24 * 1000 * 365;
   const fromDate = new Date(new Date().getTime() - oneYear);
-  const [events, setEvents] = useState<Events[]>();
+  // const [events, setEvents] = useState<Event[]>([]);
   let dates = [];
   type Event = {
     [key: string]: number;
@@ -19,15 +20,25 @@ export default function Contributions() {
   }
   useEffect(() => {
     async function getEvents() {
-      const res = await fetchGitlab();
+      const gilabRes = await fetchGitlab();
       const groupByDates = [
-        _.groupBy(res, (res) => res.created_at.split("T")[0]),
+        _.groupBy(gilabRes, (res) => res.created_at.split("T")[0]),
       ];
-      let result: Event = {};
+      let gitlabResult: Event = {};
       for (const [key, value] of Object.entries(groupByDates[0])) {
-        result[key] = value.length;
+        gitlabResult[key] = value.length;
       }
-      console.log(result);
+      console.log(gitlabResult);
+
+      const githubRes = await fetchGithub();
+      let githubResult: Event = {};
+      for (let i = 0; i < githubRes.length; i++) {
+        for (let j = 0; j < githubRes[i].contributionDays.length; j++) {
+          let item = githubRes[i].contributionDays[j];
+          githubResult[item.date] = item.contributionCount;
+        }
+      }
+      console.log(githubResult);
     }
     getEvents();
   }, []);
