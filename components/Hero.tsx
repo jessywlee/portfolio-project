@@ -1,10 +1,12 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Cursor, useTypewriter } from "react-simple-typewriter";
 import Image from "next/image";
 import Link from "next/link";
 import BackgroundCircles from "./BackgroundCircles";
 import { PageInfo } from "../typings";
 import { urlFor } from "../sanity";
+import ShinyCircle from "./ShinyCircle";
+import { mouseMoveEffect } from "../utils/Util";
 
 type Props = {
   pageInfo: PageInfo;
@@ -16,9 +18,13 @@ export default function Hero({ pageInfo }: Props) {
     loop: true,
     delaySpeed: 2000,
   });
+  useEffect(() => {
+    const background = document.querySelector('.hero-container') as HTMLElement
+     mouseMoveEffect(background)
+  },[])
   return (
-    <div className="h-screen flex flex-col justify-center items-center space-y-8 text-center overflow-hidden pt-[20px] sm:pt-[150px]">
-      <BackgroundCircles />
+    <div className="hero-container h-screen flex flex-col justify-center items-center space-y-8 text-center overflow-hidden pt-[20px] sm:pt-[150px]">
+      <ShinyCircle />
       <Image
         priority={true}
         src={urlFor(pageInfo?.heroImage).url()}

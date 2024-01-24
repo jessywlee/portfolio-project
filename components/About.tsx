@@ -1,17 +1,24 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import profilePic from "../public/profile-pic.jpeg";
 import { PageInfo } from "../typings";
 import { urlFor } from "../sanity";
+import ShinyCircle from "./ShinyCircle";
+import { mouseMoveEffect } from "../utils/Util";
 
 type Props = {
   pageInfo: PageInfo;
 };
 
 export default function About({ pageInfo }: Props) {
+  useEffect(() => {
+    const background = document.querySelector('.about-container') as HTMLElement
+     mouseMoveEffect(background)
+  },[])
   return (
-    <div className="relative">
+    <div className="relative about-container">
+      <ShinyCircle />
       <motion.div
         initial={{
           opacity: 0,

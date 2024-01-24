@@ -1,20 +1,26 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { motion } from "framer-motion";
 import { SocialIcon } from "react-social-icons";
 import Image from "next/image";
 import { Project } from "../typings";
+import ShinyCircle from "./ShinyCircle";
+import { mouseMoveEffect } from "../utils/Util";
 
 type Props = {
   projects: Project[];
 };
 
 export default function Projects({ projects }: Props) {
-  // const projects = [1, 2, 3, 4, 5];
+  useEffect(() => {
+    const background = document.querySelector('.project-container') as HTMLElement
+     mouseMoveEffect(background)
+  },[])
   return (
     <div
       className="h-screen flex flex-col relative overflow-y-scroll text-left md:flex-row max-w-full
-			justify-evenly mx-auto items-center z-0"
+			justify-evenly mx-auto items-center z-0 project-container"
     >
+      <ShinyCircle />
       <h3 className="absolute top-24 uppercase tracking-[20px] text-gray-400 text-2xl sm:text-4xl text-center">
         Projects / Studies
       </h3>

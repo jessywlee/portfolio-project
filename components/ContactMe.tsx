@@ -1,12 +1,20 @@
-import React from "react";
+import React, { useEffect } from "react";
+import ShinyCircle from "./ShinyCircle";
+import { mouseMoveEffect } from "../utils/Util";
+
 
 type Props = {};
 
 export default function ContactMe({}: Props) {
+  useEffect(() => {
+    const background = document.querySelector('.contact-container') as HTMLElement
+     mouseMoveEffect(background)
+  },[])
   return (
     <div
       className="h-screen flex flex-col relative overflow-hidden text-left md:flex-row max-w-full
-		justify-evenly mx-auto items-center z-0">
+		justify-evenly mx-auto items-center z-0 contact-container">
+      <ShinyCircle />
       <h3 className="absolute top-24 uppercase tracking-[20px] -mr-[20px] text-gray-400 text-4xl">
         Let&apos;s Talk
       </h3>

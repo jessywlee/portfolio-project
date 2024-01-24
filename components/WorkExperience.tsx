@@ -1,13 +1,19 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { motion } from "framer-motion";
 import ExperienceCard from "./ExperienceCard";
 import { Experience } from "../typings";
+import ShinyCircle from "./ShinyCircle";
+import { mouseMoveEffect } from "../utils/Util";
 
 type Props = {
   experiences: Experience[];
 };
 
 export default function WorkExprience({ experiences }: Props) {
+  useEffect(() => {
+    const background = document.querySelector('.work-container') as HTMLElement
+     mouseMoveEffect(background)
+  },[])
   return (
     <motion.div
       initial={{
@@ -21,7 +27,8 @@ export default function WorkExprience({ experiences }: Props) {
       }}
       className="h-screen flex flex-col relative 
 			text-center md:text-left md:flex-row max-w-7xl overflow-y-scroll
-			px-10 justify-evenly mx-auto items-center">
+			px-10 justify-evenly mx-auto items-center work-container">
+      <ShinyCircle />
       <h3
         className="absolute top-24 text-center z-30 uppercase tracking-[20px] 
       -mr-[20px] text-gray-400 text-3xl md:text-4xl">
