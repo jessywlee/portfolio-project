@@ -45,3 +45,16 @@ export const fetchSocials = async () => {
 
   return socials;
 };
+
+export const mouseMoveEffect = (container: HTMLElement) => {
+  container?.addEventListener('mousemove', (e) => {
+        const event = e as MouseEvent
+        const rect = container.getBoundingClientRect(),
+        x = event.clientX - rect.left,
+        y = event.clientY - rect.top;
+        container.style.setProperty("--mouse-x", `${x}px`);
+        container.style.setProperty("--mouse-y", `${y}px`);
+  })
+ 
+}
+

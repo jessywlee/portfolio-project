@@ -5,15 +5,15 @@
 @layer components {
   .heroButton {
     @apply sm:px-6 px-2 py-2 rounded-full uppercase text-xs tracking-widest text-gray-400 font-semibold
-		transition-all hover:text-[#e05abd];
+		transition-all hover:text-[rgb(224,90,189)];
   }
   .portfolio-container {
     position: relative;
   }
   .shiny-circle {
     background: radial-gradient(
-      800px circle at var(--mouse-x) var(--mouse-y),
-      rgba(255, 255, 255, 0.06),
+      900px circle at var(--mouse-x) var(--mouse-y),
+      rgba(243, 170, 224, 0.1),
       transparent 30%
     );
     position: absolute;
