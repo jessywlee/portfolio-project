@@ -17,7 +17,7 @@ export default function ExperienceCard({ experience }: Props) {
       whileInView={{ opacity: 1 }}
       transition={{ duration: 1.2 }}
       className="flex flex-col rounded-lg items-center 
-			space-y-7 flex-shrink-0 w-[340px] h-[500px] sm:w-[420px] sm:h-[600px] desktop:w-[480px] desktop:h-[640px] snap-center
+			space-y-7 flex-shrink-0 w-[335px] h-[500px] sm:w-[420px] sm:h-[600px] desktop:w-[480px] desktop:h-[640px] snap-center
 			bg-[#2d2c2c] p-6 pt-10 scrollbar-thin overflow-x-hidden
 			scrollbar-track-gray-400/20 scrollbar-thumb-[#e05abd]/40 mt-7 sm:mt-0">
       <div className="px-0 md:px-10 text-left">
